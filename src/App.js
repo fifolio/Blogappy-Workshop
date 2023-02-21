@@ -6,6 +6,8 @@ import Paper from "@mui/material/Paper";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import SinglePost from "./pages/SinglePost";
+
 
 // IMPORT REACTs
 import { useState } from "react";
@@ -20,20 +22,30 @@ export default function App() {
     },
   });
 
+  const classes = {
+    paper: {
+      boxShadow: "none",
+      position: "relative",
+      height: "100%",
+    },
+  };
+
   return (
     <>
       <BrowserRouter>
         <ThemeProvider theme={theme}>
-          <Paper>
+          <Paper sx={classes.paper}>
             <Header
               checked={darkMode}
-              onChange={() => {
+              onChange=
+              {() => {
                 setDarkMode(!darkMode);
               }}
             />
             <Routes>
               <Route element={<Home />} path="/" />
               <Route element={<About />} path="/about" />
+              <Route element={<SinglePost />} path="/post" />
             </Routes>
           </Paper>
         </ThemeProvider>
@@ -41,3 +53,12 @@ export default function App() {
     </>
   );
 }
+
+/*
+
+1- Passing Props through Router NOT WORKING
+2- The Slice method in 00:00 NOT WORKING
+  {content && content.slice(0, 100) + "..."}
+3-
+
+*/

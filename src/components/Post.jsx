@@ -5,7 +5,9 @@ import Actions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
 import Media from "@mui/material/CardMedia";
 
-export default function Post() {
+export default function Post(props) {
+  const { title, content } = props;
+
   const classes = {
     root: {
       marginBottom: "1rem",
@@ -18,12 +20,10 @@ export default function Post() {
         <Media image="https://via.placeholder.com/200x100" component="img" />
         <Content>
           <Typo variant="h6" component="h3" gutterBottom>
-            Post Title
+            {title && title.slice(0, 20)}
           </Typo>
           <Typo variant="body1" component="p">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Necessitatibus iste ipsa nulla tenetur praesentium architecto
-            delectus dolore voluptas eum porro!
+            {content && content.slice(0, 100) + "..."}
           </Typo>
         </Content>
         <Actions>

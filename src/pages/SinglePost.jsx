@@ -6,13 +6,12 @@ import { useEffect } from "react";
 import Grid from "@mui/material/Grid";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Typo from "@mui/material/Typography";
 
 // IMPORT COMPONENTS
-import Post from "../components/Post";
 import Sidebar from "../components/Sidebar";
-import FeaturedPost from "../components/FeaturedPost";
 
-export default function Home() {
+export default function SinglePost(props) {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     const URL = "https://jsonplaceholder.typicode.com/posts";
@@ -42,45 +41,27 @@ export default function Home() {
 
   return (
     <>
-      <FeaturedPost />
       <Grid
         container
         direction={matches ? "column" : "row"}
         sx={classes.root}
         justifyContent="space-evenly"
-        
       >
-        <Grid item container columnSpacing={1} xs={7} sx={classes.main}>
-          <Grid
+        <Grid items columnSpacing={1} xs={7} sx={classes.main}>
+          <Typo
             item
             xs={12}
             sx={{ margin: ".5rem auto 1.5rem auto" }}
-            component="h2"
-            variant="h2"
+            component="h1"
+            variant="h5"
           >
-            Blogappy Posts
-          </Grid>
-          {posts &&
-            posts.map((post) => {
-              return (
-                <Grid item md={6}>
-                  <Post title={post.title} content={post.body} />
-                </Grid>
-              );
-            })}
-
-          <Grid item md={6}>
-            <Post />
-          </Grid>
-          <Grid item md={6}>
-            <Post />
-          </Grid>
-          <Grid item md={6}>
-            <Post />
-          </Grid>
-          <Grid item md={6}>
-            <Post />
-          </Grid>
+            Post title goes here
+          </Typo>
+          <Typo component="p" variant="body1" gutterBottom>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error
+            asperiores a facilis maiores sequi praesentium cumque voluptatem
+            rerum similique vel.
+          </Typo>
         </Grid>
         <Grid item xs={4} sx={classes.sidebar}>
           <Grid
