@@ -48,7 +48,6 @@ export default function Home() {
         direction={matches ? "column" : "row"}
         sx={classes.root}
         justifyContent="space-evenly"
-        
       >
         <Grid item container columnSpacing={1} xs={7} sx={classes.main}>
           <Grid
@@ -64,23 +63,10 @@ export default function Home() {
             posts.map((post) => {
               return (
                 <Grid item md={6}>
-                  <Post title={post.title} content={post.body} />
+                  <Post id={post.id} title={post.title} content={post.body} />
                 </Grid>
               );
             })}
-
-          <Grid item md={6}>
-            <Post />
-          </Grid>
-          <Grid item md={6}>
-            <Post />
-          </Grid>
-          <Grid item md={6}>
-            <Post />
-          </Grid>
-          <Grid item md={6}>
-            <Post />
-          </Grid>
         </Grid>
         <Grid item xs={4} sx={classes.sidebar}>
           <Grid

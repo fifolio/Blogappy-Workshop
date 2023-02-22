@@ -8,7 +8,6 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import SinglePost from "./pages/SinglePost";
 
-
 // IMPORT REACTs
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -37,15 +36,14 @@ export default function App() {
           <Paper sx={classes.paper}>
             <Header
               checked={darkMode}
-              onChange=
-              {() => {
+              onChange={() => {
                 setDarkMode(!darkMode);
               }}
             />
             <Routes>
               <Route element={<Home />} path="/" />
-              <Route element={<About />} path="/about" />
-              <Route element={<SinglePost />} path="/post" />
+              <Route elemen t={<About />} path="/about" />
+              <Route element={<SinglePost />} path="/post/:id" />
             </Routes>
           </Paper>
         </ThemeProvider>

@@ -4,9 +4,10 @@ import Typo from "@mui/material/Typography";
 import Actions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
 import Media from "@mui/material/CardMedia";
-
+import { Link } from "react-router-dom";
+import URL from "@mui/material/Link";
 export default function Post(props) {
-  const { title, content } = props;
+  const { id, title, content } = props;
 
   const classes = {
     root: {
@@ -28,7 +29,15 @@ export default function Post(props) {
         </Content>
         <Actions>
           <Button variant="contained" fullWidth>
-            Read More
+            <URL
+              component={Link}
+              to={`/post/${id}`}
+              variant="button"
+              underline="none"
+              color="inherit"
+            >
+              Read More
+            </URL>
           </Button>
         </Actions>
       </Card>
