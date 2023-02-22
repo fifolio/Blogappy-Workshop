@@ -10,14 +10,14 @@ import SinglePost from "./pages/SinglePost";
 
 // IMPORT REACTs
 import { useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   const theme = createTheme({
     palette: {
-      mode: !darkMode ? "dark" : "light",
+      mode: !darkMode ? "light" : "dark",
     },
   });
 

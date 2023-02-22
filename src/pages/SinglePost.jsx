@@ -12,7 +12,7 @@ import Typo from "@mui/material/Typography";
 // IMPORT COMPONENTS
 import Sidebar from "../components/Sidebar";
 
-export default function SinglePost(props) {
+export default function SinglePost() {
   const { id } = useParams();
 
   const [post, setPost] = useState(undefined);
@@ -25,7 +25,7 @@ export default function SinglePost(props) {
     };
 
     fetchPost();
-  }, []);
+  });
 
   const classes = {
     root: {

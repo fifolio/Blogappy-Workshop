@@ -1,11 +1,15 @@
+// IMPORT MUI
 import Card from "@mui/material/Card";
 import Content from "@mui/material/CardContent";
 import Typo from "@mui/material/Typography";
 import Actions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
 import Media from "@mui/material/CardMedia";
-import { Link } from "react-router-dom";
 import URL from "@mui/material/Link";
+
+// IMPORT REACTS
+
+import { Link } from "react-router-dom";
 export default function Post(props) {
   const { id, title, content } = props;
 
@@ -35,6 +39,7 @@ export default function Post(props) {
               variant="button"
               underline="none"
               color="inherit"
+              sx={{ width: "100%" }}
             >
               Read More
             </URL>

@@ -27,7 +27,7 @@ export default function FeaturedPost() {
           </Typo>
         </Grid>
         <Grid item xs={12} md={8}>
-          <Typo variant="body" component="p" sx={classes.FPsecs}>
+          <Typo variant="body1" component="p" sx={classes.FPsecs}>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
             Repellendus et vero illum? Perspiciatis, harum. Eveniet quasi ex
             eaque accusamus enim?

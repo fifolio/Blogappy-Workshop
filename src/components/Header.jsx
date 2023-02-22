@@ -30,8 +30,8 @@ export default function Header(props) {
       <AppBar>
         <Toolbar>
           <Grid
-            direction={matches ? "column" : "row"}
             container
+            direction={matches ? "column" : "row"}
             justifyContent={matches ? "center" : "space-between"}
             alignItems="center"
           >
