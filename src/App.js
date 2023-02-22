@@ -42,7 +42,7 @@ export default function App() {
             />
             <Routes>
               <Route element={<Home />} path="/" />
-              <Route elemen t={<About />} path="/about" />
+              <Route element={<About />} path="/about" />
               <Route element={<SinglePost />} path="/post/:id" />
             </Routes>
           </Paper>
