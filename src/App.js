@@ -58,5 +58,6 @@ export default function App() {
 2- The Slice method in 00:00 NOT WORKING
   {content && content.slice(0, 100) + "..."}
 3-
+4-
 
 */
