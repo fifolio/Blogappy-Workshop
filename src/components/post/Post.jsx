@@ -4,7 +4,6 @@ import Content from "@mui/material/CardContent";
 import Typo from "@mui/material/Typography";
 import Actions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
-import Media from "@mui/material/CardMedia";
 import URL from "@mui/material/Link";
 
 // IMPORT REACTS
