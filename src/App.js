@@ -3,10 +3,10 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 
 // IMPORT COMPONENTS
-import Header from "./components/Header";
+import Header from "./parts/Header";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import SinglePost from "./pages/SinglePost";
+import SinglePost from "./pages/templates/SinglePost";
 
 // IMPORT REACTs
 import { useState } from "react";

@@ -8,9 +8,11 @@ import Grid from "@mui/material/Grid";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Typo from "@mui/material/Typography";
+import CircularProgress from "@mui/material/CircularProgress";
 
 // IMPORT COMPONENTS
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../../parts/Sidebar";
+import Post from "../../components/post/Post";
 
 export default function SinglePost() {
   const { id } = useParams();
@@ -24,7 +26,7 @@ export default function SinglePost() {
       setPost(post);
     };
 
-    fetchPost();
+    setTimeout(fetchPost, 1500);
   });
 
   const classes = {
@@ -51,21 +53,14 @@ export default function SinglePost() {
         justifyContent="space-evenly"
       >
         <Grid items columnSpacing={1} xs={7} sx={classes.main}>
-          {post && (
+          {post && post !== false ? (
             <>
-              <Typo
-                item
-                xs={12}
-                sx={{ margin: ".5rem auto 1.5rem auto" }}
-                component="h1"
-                variant="h5"
-              >
-                {post.title}
-              </Typo>
-              <Typo component="p" variant="body1" gutterBottom>
-                {post.body}
-              </Typo>
+              <Post id={post.id} title={post.title} content={post.body} />
             </>
+          ) : (
+            <center>
+              <CircularProgress />
+            </center>
           )}
         </Grid>
         <Grid item xs={4} sx={classes.sidebar}>

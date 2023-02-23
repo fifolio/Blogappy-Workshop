@@ -13,7 +13,7 @@ import URL from "@mui/material/Link";
 import { Link } from "react-router-dom";
 
 // IMPORT COMPONENTS
-import Switch from "./Switch";
+import Switch from "../components/shared/Switch";
 
 export default function Header(props) {
   const { checked, onChange } = props;
