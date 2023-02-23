@@ -34,7 +34,7 @@ export default function AddPost() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validation
+    //! Validation
   };
 
   return (
