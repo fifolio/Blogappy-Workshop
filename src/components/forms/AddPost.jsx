@@ -26,7 +26,7 @@ export default function AddPost() {
             />
             <TextField
               name="content"
-              helperText="Post content must contain between 10- 240 "
+              helperText="Post content must contain between 10- 240"
               label="Post Content"
               fullWidth
               multiline
