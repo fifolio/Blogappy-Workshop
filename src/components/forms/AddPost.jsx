@@ -9,16 +9,18 @@ import Btn from "@mui/material/Button";
 export default function AddPost() {
   const [values, setValues] = useState({ title: "", body: "" });
 
+  // const [errors, setErrors] = useState();
+
   const handleInputChange = (e) => {
-    // Get the Name and Value of the target/input
+    // Get the (Name of the Target), and Get the (value of the e)
     const { name, value } = e.target;
-    
-    // Call the setValue function 
+
+    // Call the function (setValues) in order to update the state
     setValues({
-      ...values,
       [name]: value,
     });
   };
+
   const style = {
     form: {
       element: {
@@ -29,8 +31,8 @@ export default function AddPost() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-  }
+    e.preventDefault();
+  };
 
   return (
     <>
@@ -47,7 +49,7 @@ export default function AddPost() {
               onChange={handleInputChange}
             />
             <TextField
-              name="content"
+              name="body"
               helperText="Post content must contain between 10- 240"
               label="Post Content"
               fullWidth
