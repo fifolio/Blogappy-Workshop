@@ -7,6 +7,7 @@ import Header from "./parts/Header";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import SinglePost from "./pages/templates/SinglePost";
+import AddPost from './pages/forms/AddPost.jsx';
 
 // IMPORT REACTs
 import { useState } from "react";
@@ -44,6 +45,7 @@ export default function App() {
               <Route element={<Home />} path="/" />
               <Route element={<About />} path="/about" />
               <Route element={<SinglePost />} path="/post/:id" />
+              <Route element={<AddPost />} path="/add-post"/>
             </Routes>
           </Paper>
         </ThemeProvider>

@@ -71,7 +71,7 @@ export default function Home() {
             component="h2"
             variant="h2"
           >
-            Blogappy Posts
+            Posts
           </Grid>
           {posts && posts.length > 0 ? (
             posts.map((post) => {

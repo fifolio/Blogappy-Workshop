@@ -47,22 +47,11 @@ export default function Header(props) {
                   component="h1"
                   sx={{ marginTop: "5px" }}
                 >
-                  Blogappy
+                  NAWBLOG
                 </Typography>
               </Grid>
             </Grid>
-            <Grid item container xs="auto" columnSpacing={1}>
-              <Grid item sx={gridLinks}>
-                <URL
-                  component={Link}
-                  to="/about"
-                  variant="button"
-                  underline="none"
-                  color="inherit"
-                >
-                  About
-                </URL>
-              </Grid>
+            <Grid item container xs="auto" columnSpacing={2}>
               <Grid item sx={gridLinks}>
                 <URL
                   component={Link}
@@ -72,6 +61,28 @@ export default function Header(props) {
                   color="inherit"
                 >
                   Home
+                </URL>
+              </Grid>
+              <Grid item sx={gridLinks}>
+                <URL
+                  component={Link}
+                  to="/add-post"
+                  variant="button"
+                  underline="none"
+                  color="inherit"
+                >
+                  Add Post
+                </URL>
+              </Grid>
+              <Grid item sx={gridLinks}>
+                <URL
+                  component={Link}
+                  to="/about"
+                  variant="button"
+                  underline="none"
+                  color="inherit"
+                >
+                  About
                 </URL>
               </Grid>
               <Grid item>

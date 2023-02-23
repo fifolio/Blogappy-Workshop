@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 
 // IMPORT COMPONENTS
 import FeaturedPost from "../post/Featured";
+import Controls from "../../components/post/Controls";
 
 export default function Post(props) {
   const { id, title, content, featured, snippet } = props;
@@ -26,6 +27,7 @@ export default function Post(props) {
       {featured && <FeaturedPost id={id} title={title} content={content} />}
       {!featured && (
         <Card raised sx={classes.root}>
+          <Controls />
           <Content>
             <Typo variant="h6" component="h3" gutterBottom>
               {snippet ? title.slice(0, 15) : title}
