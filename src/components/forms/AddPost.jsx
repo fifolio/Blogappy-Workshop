@@ -9,7 +9,8 @@ import Btn from "@mui/material/Button";
 export default function AddPost() {
   const [values, setValues] = useState({ title: "", body: "" });
 
-  // const [errors, setErrors] = useState();
+  const [errors, setErrors] = useState({});
+  errors.title = "You have something wrong!";
 
   const handleInputChange = (e) => {
     // Get the (Name of the Target), and Get the (value of the e)
@@ -32,6 +33,8 @@ export default function AddPost() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Validation
   };
 
   return (
@@ -41,16 +44,16 @@ export default function AddPost() {
           <form onSubmit={handleSubmit}>
             <TextField
               name="title"
-              helperText="Post title must contain 7-70 chars"
               label="Post Title"
               fullWidth
               sx={style.form.element}
               value={values.title}
               onChange={handleInputChange}
+              error={!!errors.title} //! In JavaScript, the double exclamation operator (!!) converts an Object to Boolean.
+              helperText={errors.title && errors.title}
             />
             <TextField
               name="body"
-              helperText="Post content must contain between 10- 240"
               label="Post Content"
               fullWidth
               multiline
@@ -58,6 +61,8 @@ export default function AddPost() {
               sx={style.form.element}
               value={values.body}
               onChange={handleInputChange}
+              error={!!errors.body}
+              helperText={errors.body && errors.body}
             />
             <Btn
               type="submit"
