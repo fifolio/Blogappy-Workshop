@@ -10,7 +10,7 @@ import AddPostForm from "../../components/forms/AddPost";
 export default function AddPost() {
   return (
     <>
-      <Paper>
+      <Paper sx={{ position: "static", minHeight: "100vh", padding: 0 }}>
         <Grid
           container
           justifyContent="center"
@@ -18,7 +18,7 @@ export default function AddPost() {
           sx={{ maxWidth: "80%", mx: "auto", padding: "2" }}
         >
           <Grid item m={5}>
-            <Typo variant="h4" component="h4">
+            <Typo variant="h4" component="h4" sx={{ fontWeight: "bold" }}>
               Add Post
             </Typo>
             <Typo variant="body" component="h5">

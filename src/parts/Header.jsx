@@ -45,7 +45,7 @@ export default function Header(props) {
                 <Typography
                   variant="h6"
                   component="h1"
-                  sx={{ marginTop: "5px" }}
+                  sx={{ marginTop: "5px", fontWeight: 'bold' }}
                 >
                   NAWBLOG
                 </Typography>
