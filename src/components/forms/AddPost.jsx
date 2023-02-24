@@ -10,7 +10,7 @@ export default function AddPost() {
   const [values, setValues] = useState({ title: "", body: "" });
 
   const [errors, setErrors] = useState({});
-  errors.title = "You have something wrong!";
+  // errors.title = "You have something wrong!";
 
   const handleInputChange = (e) => {
     // Get the (Name of the Target), and Get the (value of the e)
