@@ -27,7 +27,7 @@ export default function Post(props) {
       {featured && <FeaturedPost id={id} title={title} content={content} />}
       {!featured && (
         <Card raised sx={classes.root}>
-          <Controls />
+          <Controls postTitle={title} postContent={content} />
           <Content>
             <Typo variant="h6" component="h3" gutterBottom>
               {snippet ? title.slice(0, 15) : title}

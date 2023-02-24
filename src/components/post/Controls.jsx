@@ -9,9 +9,18 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import Collapse from "@mui/material/Collapse";
 import SettingsIcon from "@mui/icons-material/Settings";
 
-export default function Controls() {
+// IMPORT COMPONENTS
+import Dialog from "../shared/Dialog";
+
+export default function Controls(props) {
+  const { postTitle, postContent } = props;
   const [open, setOpen] = useState(false);
 
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const deleteAnItem = () => {
+    console.log("item will be deleted");
+    setDialogOpen(false);
+  };
   return (
     <>
       <Grid container justifyContent="space-between">
@@ -26,11 +35,18 @@ export default function Controls() {
               <EditIcon />
             </IconButton>
             <IconButton color="error">
-              <DeleteIcon />
+              <DeleteIcon onClick={() => setDialogOpen(true)} />
             </IconButton>
           </Collapse>
         </Grid>
       </Grid>
+      <Dialog
+        dialogOpen={dialogOpen}
+        setDialogOpen={setDialogOpen}
+        onDialogConfirm={deleteAnItem}
+        title={postTitle}
+        text={postContent}
+      />
     </>
   );
 }
