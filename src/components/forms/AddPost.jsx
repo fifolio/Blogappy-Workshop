@@ -6,11 +6,13 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Btn from "@mui/material/Button";
 
+// IMPORT COMPONENTS
+// import validate from "../../utils/validation/post";
+
 export default function AddPost() {
   const [values, setValues] = useState({ title: "", body: "" });
 
-  const [errors, setErrors] = useState({});
-  // errors.title = "You have something wrong!";
+  //const //[errors, setErrors] = useState({});
 
   const handleInputChange = (e) => {
     // Get the (Name of the Target), and Get the (value of the e)
@@ -34,7 +36,11 @@ export default function AddPost() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    //! Validation
+    // Validation
+    // const title = values.title;
+    // const body = values.body;
+    // const validationErrors = validate(title, body);
+    // setErrors(validationErrors);
   };
 
   return (
@@ -49,8 +55,8 @@ export default function AddPost() {
               sx={style.form.element}
               value={values.title}
               onChange={handleInputChange}
-              error={!!errors.title} //! In JavaScript, the double exclamation operator (!!) converts an Object to Boolean.
-              helperText={errors.title && errors.title}
+              //error={!!errors.title} //! In JavaScript, the double exclamation operator (!!) converts an Object to Boolean.
+              //helperText={errors.title && errors.title}
             />
             <TextField
               name="body"
@@ -61,8 +67,8 @@ export default function AddPost() {
               sx={style.form.element}
               value={values.body}
               onChange={handleInputChange}
-              error={!!errors.body}
-              helperText={errors.body && errors.body}
+              //error={!!errors.body}
+              //helperText={errors.body && errors.body}
             />
             <Btn
               type="submit"
