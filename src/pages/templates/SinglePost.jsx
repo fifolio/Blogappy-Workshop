@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import Typo from "@mui/material/Typography";
+// import Typo from "@mui/material/Typography";
 import CircularProgress from "@mui/material/CircularProgress";
 
 // IMPORT COMPONENTS

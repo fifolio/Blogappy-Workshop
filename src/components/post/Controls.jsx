@@ -11,6 +11,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 
 // IMPORT COMPONENTS
 import Dialog from "../shared/Dialog";
+import UpdatePost from "../forms/UpdatePost";
 
 export default function Controls(props) {
   const { postID, postTitle, postContent } = props;
@@ -31,11 +32,11 @@ export default function Controls(props) {
         </Grid>
         <Grid item>
           <Collapse in={open} timeout="auto" unmountOnExit>
-            <IconButton color="info">
+            <IconButton color="info" href={`update-post/${postID}`}>
               <EditIcon />
             </IconButton>
-            <IconButton color="error">
-              <DeleteIcon onClick={() => setDialogOpen(true)} />
+            <IconButton color="error" onClick={() => setDialogOpen(true)}>
+              <DeleteIcon />
             </IconButton>
           </Collapse>
         </Grid>

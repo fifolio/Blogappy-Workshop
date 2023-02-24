@@ -24,7 +24,7 @@ export default function Home() {
       const posts = await res.json();
       setPosts(posts);
     };
-    setTimeout(fetchPosts, 1500);
+    setTimeout(fetchPosts, 50);
   }, [page]);
 
   const classes = {

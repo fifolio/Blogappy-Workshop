@@ -7,7 +7,8 @@ import Header from "./parts/Header";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import SinglePost from "./pages/templates/SinglePost";
-import AddPost from './pages/forms/AddPost.jsx';
+import AddPost from "./pages/forms/AddPost.jsx";
+import UpdatePostPage from "./components/forms/UpdatePost.jsx";
 
 // IMPORT REACTs
 import { useState } from "react";
@@ -45,7 +46,9 @@ export default function App() {
               <Route element={<Home />} path="/" />
               <Route element={<About />} path="/about" />
               <Route element={<SinglePost />} path="/post/:id" />
-              <Route element={<AddPost />} path="/add-post"/>
+              <Route element={<AddPost />} path="/add-post" />
+              <Route element={<UpdatePostPage />} path="/update-post/:id" />
+              {/* //TODO: let the UpdatePostPage call the form inside it from the UpdatePost form from components */}
             </Routes>
           </Paper>
         </ThemeProvider>
