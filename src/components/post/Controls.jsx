@@ -13,12 +13,12 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import Dialog from "../shared/Dialog";
 
 export default function Controls(props) {
-  const { postTitle, postContent } = props;
+  const { postID, postTitle, postContent } = props;
   const [open, setOpen] = useState(false);
 
   const [dialogOpen, setDialogOpen] = useState(false);
   const deleteAnItem = () => {
-    console.log("item will be deleted");
+    console.log(`item with id ${postID} will be deleted`);
     setDialogOpen(false);
   };
   return (
