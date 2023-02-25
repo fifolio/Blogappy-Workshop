@@ -14,6 +14,7 @@ import Pagination from "@mui/material/Pagination";
 import Post from "../components/post/Post";
 import Sidebar from "../parts/Sidebar";
 
+
 export default function Home() {
   const [posts, setPosts] = useState([]);
   const [page, setPage] = useState(1);
