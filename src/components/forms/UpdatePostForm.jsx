@@ -9,8 +9,12 @@ import Btn from "@mui/material/Button";
 // IMPORT COMPONENTS
 // import validate from "../../utils/validation/post";
 
-export default function UpdatePostForm() {
-  const [values, setValues] = useState({ title: "", body: "" });
+export default function UpdatePostForm(props) {
+  const { postData } = props;
+  const [values, setValues] = useState({
+    title: postData.title || "",
+    body: postData.body || "",
+  });
 
   //const //[errors, setErrors] = useState({});
 
@@ -35,7 +39,6 @@ export default function UpdatePostForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
   };
 
   return (
@@ -72,7 +75,7 @@ export default function UpdatePostForm() {
               fullWidth
               sx={style.form.element}
             >
-              Submit
+              Update
             </Btn>
           </form>
         </Grid>
