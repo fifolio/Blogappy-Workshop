@@ -11,9 +11,11 @@ import Btn from "@mui/material/Button";
 
 export default function UpdatePostForm(props) {
   const { postData } = props;
+  const fetchedPost = postData || {};
+
   const [values, setValues] = useState({
-    title: postData.title || "",
-    body: postData.body || "",
+    title: fetchedPost.title || "",
+    body: fetchedPost.body || "",
   });
 
   //const //[errors, setErrors] = useState({});
