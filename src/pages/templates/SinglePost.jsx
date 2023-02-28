@@ -13,21 +13,23 @@ import CircularProgress from "@mui/material/CircularProgress";
 // IMPORT COMPONENTS
 import Sidebar from "../../parts/Sidebar";
 import Post from "../../components/post/Post";
+import requests from "../../api/posts/requests";
 
 export default function SinglePost() {
   const { id } = useParams();
-
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down("sm"));
   const [post, setPost] = useState(undefined);
+
   useEffect(() => {
-    const URL = `https://jsonplaceholder.typicode.com/posts/${id}`;
+    const URL = `/posts/${id}`;
     const fetchPost = async () => {
-      const res = await fetch(URL);
-      const post = await res.json();
+      const response = await fetch(URL);
+      const post = await response.json();
       setPost(post);
     };
-
-    setTimeout(fetchPost, 1500);
-  });
+    fetchPost();
+  }, [id]);
 
   const classes = {
     root: {
@@ -40,9 +42,6 @@ export default function SinglePost() {
       padding: "1rem",
     },
   };
-
-  const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <>
