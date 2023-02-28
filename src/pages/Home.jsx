@@ -14,15 +14,17 @@ import Pagination from "@mui/material/Pagination";
 import Post from "../components/post/Post";
 import Sidebar from "../parts/Sidebar";
 
-
 export default function Home() {
   const [posts, setPosts] = useState([]);
   const [page, setPage] = useState(1);
+  const [pagesNum, setPagesNum] = useState(1);
   useEffect(() => {
-    const URL = `https://jsonplaceholder.typicode.com/posts/?_page=${page}`;
+    const URL = `/posts/?page=${page}`;
     const fetchPosts = async () => {
-      const res = await fetch(URL);
-      const posts = await res.json();
+      const response = await fetch(URL);
+      const data = await response.json();
+      const { posts, pagesCount } = data;
+      setPagesNum(pagesCount);
       setPosts(posts);
     };
     setTimeout(fetchPosts, 50);
@@ -93,7 +95,7 @@ export default function Home() {
           <center>
             <Grid item xs={12}>
               <Pagination
-                count={10}
+                count={pagesNum}
                 onChange={(e, value) => {
                   setPage(value);
                 }}

@@ -55,13 +55,3 @@ export default function App() {
     </>
   );
 }
-
-/*
-
-1- Passing Props through Router NOT WORKING
-2- The Slice method in 00:00 NOT WORKING
-  {content && content.slice(0, 100) + "..."}
-3- I didn't understand why you used ...values to get all values!
-4-
-
-*/
