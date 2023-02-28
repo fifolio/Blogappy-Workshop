@@ -13,22 +13,21 @@ import Pagination from "@mui/material/Pagination";
 // IMPORT COMPONENTS
 import Post from "../components/post/Post";
 import Sidebar from "../parts/Sidebar";
+import requests from "../api/posts/requests";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
-  const [page, setPage] = useState(1);
+  const [page_pagi, setPage] = useState(1);
   const [pagesNum, setPagesNum] = useState(1);
   useEffect(() => {
-    const URL = `/posts/?page=${page}`;
-    const fetchPosts = async () => {
-      const response = await fetch(URL);
-      const data = await response.json();
+    const fetchPosts = async (page) => {
+      const data = await requests.getAll(page);
       const { posts, pagesCount } = data;
       setPagesNum(pagesCount);
       setPosts(posts);
     };
-    setTimeout(fetchPosts, 50);
-  }, [page]);
+    fetchPosts(page_pagi);
+  }, [page_pagi]);
 
   const classes = {
     root: {
