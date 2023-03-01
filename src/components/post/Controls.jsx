@@ -11,7 +11,6 @@ import SettingsIcon from "@mui/icons-material/Settings";
 
 // IMPORT COMPONENTS
 import Dialog from "../shared/Dialog";
-// import UpdatePost from "../forms/UpdatePostForm";
 
 export default function Controls(props) {
   const { postID, postTitle, postContent } = props;
